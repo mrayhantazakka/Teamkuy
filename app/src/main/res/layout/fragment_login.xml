@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logreg">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        app:srcCompat="@drawable/loginn"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="-102dp" />
+
+    <TextView
+        android:id="@+id/masuklogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="181dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Welcome Back!"
+        android:textColor="@color/dblue"
+        android:textSize="32dp"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="225dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
+        style="@style/stroke_textField"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="268dp"
+        app:endIconMode="clear_text"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="299dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputEmail"
+            android:layout_width="350dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="31dp"
+            android:hint="Masukkan email anda"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="464dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="320dp"
+        app:endIconMode="password_toggle"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="382dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPass"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="409dp"
+            android:layout_marginEnd="41dp"
+            android:hint="Masukkan password anda"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="358dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnMasuk"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="234dp"
+        android:backgroundTint="@color/lblue"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Masuk"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <TextView
+        android:id="@+id/belum_punya_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginBottom="197dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Belum Punya Akun?"
+        android:textColor="@color/dblue"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="556dp" />
+
+    <TextView
+        android:id="@+id/daftarAkun"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="235dp"
+        android:layout_marginBottom="196dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Register"
+        android:textColor="@color/lblue"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="556dp" />
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Teamkuy</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="daftar">Belum punya akun ?</string>
+    <string name="masuk">Sudah punya akun ?</string>
+</resources>
