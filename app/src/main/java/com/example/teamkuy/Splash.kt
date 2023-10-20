@@ -1,14 +1,12 @@
-package com.example.teamkuy.ui.splashscreen
+package com.example.teamkuy
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.teamkuy.LoginActivity
-import com.example.teamkuy.R
 
-class SplashscreenActivity: AppCompatActivity() {
+class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_splashscreen)
@@ -20,6 +18,6 @@ class SplashscreenActivity: AppCompatActivity() {
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }, 2000)
+        }, 3000)
     }
 }
