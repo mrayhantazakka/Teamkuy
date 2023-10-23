@@ -5,4 +5,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="daftar">Belum punya akun ?</string>
     <string name="masuk">Sudah punya akun ?</string>
+    <string name="avatar">Avatar</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
 </resources>
