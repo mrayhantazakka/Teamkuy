@@ -21,6 +21,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, View.OnFocus
         super.onCreate(savedInstanceState)
         mBinding = FragmentRegisterBinding.inflate(LayoutInflater.from(this))
         setContentView(mBinding.root)
+        supportActionBar?.hide()
 
         mBinding.inputNamaPengguna.onFocusChangeListener = this
         mBinding.inputEmail.onFocusChangeListener = this
