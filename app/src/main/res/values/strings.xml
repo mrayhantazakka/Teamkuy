@@ -8,4 +8,10 @@
     <string name="avatar">Avatar</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login">Masuk</string>
+    <string name="txtViewRegister">Register</string>
+    <string name="txtViewEmail">Masukan Email ...</string>
+    <string name="txtViewPassword">Masukan Password ...</string>
+
 </resources>
