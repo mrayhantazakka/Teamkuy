@@ -1,5 +1,6 @@
 package com.example.teamkuy
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -8,26 +9,83 @@ import android.util.Patterns
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
+import com.example.teamapp.database.NoteRoomDatabase
 import com.example.teamkuy.R
 import com.example.teamkuy.databinding.FragmentRegisterBinding
+import com.example.teamkuy.ui.database.Note
+import com.example.teamkuy.ui.login.LoginActivity
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListener,
     View.OnKeyListener {
 
     private lateinit var mBinding: FragmentRegisterBinding
+    private lateinit var db: NoteRoomDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = FragmentRegisterBinding.inflate(LayoutInflater.from(this))
+
         setContentView(mBinding.root)
         supportActionBar?.hide()
 
-        mBinding.inputNamaPengguna.onFocusChangeListener = this
-        mBinding.inputEmail.onFocusChangeListener = this
-        mBinding.inputPassword.onFocusChangeListener = this
+        db = NoteRoomDatabase.getDatabase(this)
+
+        mBinding.btndaftar.setOnClickListener {
+            val githubUsername = mBinding.inputNamaPenggunaGithub.text.toString()
+            val email = mBinding.inputEmail.text.toString()
+            val NamaPengguna = mBinding.inputNamaPengguna.text.toString()
+            val password = mBinding.inputPassword.text.toString()
+
+            if (githubUsername.isNotEmpty() && email.isNotEmpty() && NamaPengguna.isNotEmpty() && password.isNotEmpty()) {
+                val noteDao = db.NoteDao()
+                val note = Note(0, githubUsername, email, NamaPengguna, password)
+
+                // Jalankan operasi penyimpanan dengan Kotlin Coroutines
+                GlobalScope.launch {
+                    val useruId = noteDao.insert(note)
+
+                    if (useruId.isNotEmpty()) {
+                        // Data berhasil disimpan
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                "Registrasi Berhasil",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                            startActivity(intent)
+                        }
+                    } else {
+                        // Gagal menyimpan data
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                "User Sudah Ada",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                }
+            } else {
+                Toast.makeText(this@RegisterActivity, "Harap isi semua kolom", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+        txtLoginListener()
     }
 
+private fun txtLoginListener() {
+    mBinding.backlogin.setOnClickListener {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+}
     private fun showError(binding: TextInputLayout, errorMessage: String) {
         binding.apply {
             isErrorEnabled = true
@@ -40,7 +98,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, View.OnFocus
     }
 
     private fun validateFullName(): Boolean {
-        val value = mBinding.inputNamaPengguna.text.toString()
+        val value =mBinding.inputNamaPengguna.text.toString()
         if (value.isEmpty()) {
             showError(mBinding.namaPenggunaLayout, "Nama lengkap diperlukan")
             return false

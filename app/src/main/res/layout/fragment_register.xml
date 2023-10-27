@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Nama Pengguna Github"
+            android:text="Nama Github"
             android:textColor="@color/dblue"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -185,24 +185,24 @@
             android:textColor="@color/dblue"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_daftar" />
+            app:layout_constraintTop_toBottomOf="@+id/btndaftar" />
 
         <TextView
-            android:id="@+id/pertanyaan_daftar"
+            android:id="@+id/backlogin"
             android:layout_width="60dp"
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Login"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/white"
             android:textStyle="italic"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/belum_punya_akun"
-            app:layout_constraintTop_toBottomOf="@id/btn_daftar" />
+            app:layout_constraintTop_toBottomOf="@id/btndaftar" />
 
         <Button
-            android:id="@+id/btn_daftar"
+            android:id="@+id/btndaftar"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
