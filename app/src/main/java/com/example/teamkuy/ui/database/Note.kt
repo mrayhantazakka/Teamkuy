@@ -16,11 +16,11 @@ data class Note(
     @ColumnInfo(name = "GitHubUsername")
     var GitHubUsername: String? = null,
 
-    @ColumnInfo(name = "NamaPengguna")
-    var NamaPengguna: String? = null,
-
     @ColumnInfo(name = "Email")
     var Email: String? = null,
+
+    @ColumnInfo(name = "NamaPengguna")
+    var NamaPengguna: String? = null,
 
     @ColumnInfo(name = "Password")
     var Password: String? = null

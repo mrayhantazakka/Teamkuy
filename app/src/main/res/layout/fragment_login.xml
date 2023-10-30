@@ -70,7 +70,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
                 style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
-                android:layout_width="325dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Masukkan email anda"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +109,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPass"
-                android:layout_width="325dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Masukkan password anda"
                 android:inputType="textPassword"
